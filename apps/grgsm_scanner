@@ -429,6 +429,11 @@ def main(options = None):
     def printfunc(found_list):
         for info in sorted(found_list):
             print(info)
+            # Output to file
+            text_file = open("grgsm_chans.txt", "a")
+            text_file.write(str(info) + "\n")
+            text_file.close()
+            
             if options.verbose:
                 print(info.get_verbose_info())
     print("")
